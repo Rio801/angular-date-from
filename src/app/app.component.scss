@@ -1,0 +1,33 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.home-icon {
+  margin-right: 10px;
+}
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--mat-sys-on-primary-container);
+}
+.mat-mdc-card {
+  margin-bottom: 20px;
+}
+
+.formfield {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.formaction {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submitbutton {
+  width: 140px;
+  height: 140;
+}
