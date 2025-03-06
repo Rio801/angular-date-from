@@ -1,0 +1,54 @@
+/* Ensure the mat-card takes full width and is centered */
+.mat-card {
+  width: 80%; /* Adjust the width of the card */
+  margin: 50px auto; /* Center the card horizontally with margin at top */
+  padding: 20px; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow for better look */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center text inside card */
+}
+
+.mat-card-header {
+  padding: 10px; /* Padding around header */
+  border-radius: 8px 8px 0 0; /* Rounded corners for the top of the card */
+}
+
+/* Styling for mat-card-title */
+.mat-card-title {
+  font-size: 24px; /* Increase font size for the title */
+  font-weight: bold; /* Bold font for the title */
+  color: #333; /* Dark text color */
+  margin-bottom: 10px; /* Space below title */
+}
+
+/* Styling for mat-card-content */
+.mat-card-content {
+  font-size: 18px; /* Adjust font size for content */
+  color: #555; /* Lighter text color */
+  line-height: 1.6; /* Better readability with increased line height */
+  margin-top: 20px; /* Space above content */
+}
+
+/* Optional: Style the h1 inside the mat-card-content */
+.mat-card-content h1 {
+  font-size: 20px; /* Reduce font size of h1 inside content */
+  font-weight: normal; /* Make the h1 less bold */
+  color: #333; /* Dark color for the text */
+  margin: 20px 0; /* Space above and below the h1 */
+}
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .mat-card {
+    width: 90%; /* Make card width smaller on mobile devices */
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .mat-card-title {
+    font-size: 20px; /* Adjust title size */
+  }
+
+  .mat-card-content h1 {
+    font-size: 18px; /* Adjust h1 size for smaller screens */
+  }
+}

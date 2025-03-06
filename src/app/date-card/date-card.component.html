@@ -1,0 +1,77 @@
+<main>
+  <div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="cardlabel"> Pick a Date</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+          <mat-form-field class="formfield">
+            <mat-label>Number of days</mat-label>
+            <input
+              matInput
+              formControlName="numberOfDays"
+              placeholder="Enter Number of days"
+              type="number"
+            >
+            @if (formGroup.get("numberOfDays")?.hasError("required")) {
+              <mat-error>
+                Number of Days is required
+              </mat-error>
+            }
+            @if (formGroup.get("numberOfDays")?.hasError("min")) {
+              <mat-error>
+                Number of Days must be greater than 0
+              </mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="formfield">
+            <mat-label>Pick A Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (formGroup.get("numberOfDays")?.hasError(
+                "required"
+              )) {
+              <mat-error>
+                Date is required
+              </mat-error>
+            }
+          </mat-form-field>
+          <div class="form-actions">
+            <button
+              mat-fab
+              extended
+              class="submit-button"
+              type="submit"
+              [disabled]="formGroup.invalid"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+        @if (submited()) {
+          <div class="results-section">
+            <h3 class="results-title">Results</h3>
+            <div class="result-item">
+              <strong>Days:</strong>
+              {{ submittedData.days }}
+            </div>
+            <div class="result-item">
+              <strong>Date:</strong>
+              {{ submittedData.date.toLocaleString() }}
+            </div>
+            <div class="result-item">
+              <strong>Days from today:</strong>
+              {{ finalResult() }}
+            </div>
+          </div>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+</main>
